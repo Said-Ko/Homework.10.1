@@ -1,4 +1,4 @@
-from masks import mask_account_card, get_date
+from masks import get_date, mask_account_card
 
 user_card = input("Введите тип карты и номер карты: ")
 print(mask_account_card(user_card))
