@@ -18,7 +18,7 @@ def get_mask_account(numbers_accounts: Union[str]) -> Union[str]:
         return "введены не корректные данные"
 
 
-def mask_account_card(user_card: Union[str, int]) -> Union[str, int]:
+def mask_account_card(user_card: Union[str]) -> Union[str]:
     """Функция приема типа и номера карты или счета"""
     beginning_numb_cards = user_card.rfind(" ")
     card_name = user_card[:beginning_numb_cards]
