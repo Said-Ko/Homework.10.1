@@ -1,11 +1,11 @@
-# from src.masks import get_mask_account, get_mask_card_number
+from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 
-# numbers_cards = input("введите номер карты: ")
-# print(get_mask_card_number(numbers_cards))
-#
-# numbers_accounts = input("введите номер счета: ")
-# print(get_mask_account(numbers_accounts))
+numbers_cards = input("введите номер карты: ")
+print(get_mask_card_number(numbers_cards))
+
+numbers_accounts = input("введите номер счета: ")
+print(get_mask_account(numbers_accounts))
 
 tested_input = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
