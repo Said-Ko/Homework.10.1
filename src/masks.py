@@ -1,38 +1,27 @@
 from typing import Union
 
-
-def get_mask_card_number(numbers_cards: Union[str]) -> Union[str]:
-    """Функция приема номер карты"""
-    if numbers_cards.isdigit() and len(numbers_cards) == 16:
-        return f"{numbers_cards[:4]} {numbers_cards[4:6]}** **** {numbers_cards[-4:]}"
+def get_mask_card_number(number_card: Union[ int, str]) -> str:
+    """Функция принимает на вход номер карты и шифрует его"""
+    str_number_card = str(number_card)
+    if number_card is None or not number_card:  # Если в номер карты передается пустой список или ничего не передается
+        result_number_card = "0" # переопределил его как "0"
+    elif " " in str_number_card:
+        str_number_card = str_number_card.replace(" ", "")
+    elif str_number_card.isdigit() and len(str_number_card) == 16:
+        result_number_card = f"{str_number_card[0:4]} {str_number_card[4:6]}** **** {str_number_card[-4:]}"
     else:
-        return "введены не корректные данные"
+        result_number_card = "Введен некорректный номер карты"
+    return result_number_card
 
+def get_mask_account(numbers_accounts: Union[str,int]) -> Union[str]:
+    """Функция приема номера счета и шифрует его"""
 
-def get_mask_account(numbers_accounts: Union[str]) -> Union[str]:
-    """Функция приема номера счета"""
-
-    if numbers_accounts.isdigit():
-        return f"**{numbers_accounts[-4:]}"
+    str_numbers_accounts = str(numbers_accounts)
+    if numbers_accounts is None or not numbers_accounts: # Если в номер счета передается пустой список или ничего не передается
+        result_number_accounts = "0" # переопределил его как "0"
+    elif str_numbers_accounts.isdigit():
+        result_number_accounts = f"**{str_numbers_accounts[-4:]}"
     else:
-        return "введены не корректные данные"
+        result_number_accounts = "введены не корректные данные"
+    return result_number_accounts
 
-
-def mask_account_card(user_card: Union[str]) -> Union[str]:
-    """Функция приема типа и номера карты или счета"""
-    beginning_numb_cards = user_card.rfind(" ")
-    card_name = user_card[:beginning_numb_cards]
-    card_numb = user_card[beginning_numb_cards + 1 :]
-    if "Счет" in user_card:
-        return f"{card_name} **{card_numb[-4:]}"
-    else:
-        return f"{card_name} {card_numb[0:4]} {card_numb[4:6]}** **** {card_numb[-4:]}"
-
-
-def get_date(users_date: Union[str]) -> Union[str]:
-    """Функция приема даты и возврат в стандартном формате"""
-    date_without_time = users_date.find("T")
-    only_date = users_date[:date_without_time]
-    truth_format_date_list = list(reversed(only_date.split("-")))
-    result = ".".join(truth_format_date_list)
-    return result

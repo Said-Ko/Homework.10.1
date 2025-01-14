@@ -1,9 +1,7 @@
 from typing import Dict, List
 
 
-def filter_by_state(
-    tested_input: List[Dict], state_of_dict: str = "EXECUTED"
-) -> List[Dict]:
+def filter_by_state(tested_input: List[Dict], state_of_dict: str = "EXECUTED") -> List[Dict]:
     """Функция возвращает список словарей со статусом 'EXECUTED'"""
     list_of_executed = []
     for element_of_list in tested_input:
