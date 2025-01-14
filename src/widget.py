@@ -32,8 +32,15 @@ def mask_account_card(user_card: Union[str]) -> Union[str]:
 
 def get_date(users_date: Union[str]) -> Union[str]:
     """Функция приема даты и возврат в стандартном формате"""
-    date_without_time = users_date.find("T")
-    only_date = users_date[:date_without_time]
-    truth_format_date_list = list(reversed(only_date.split("-")))
-    result = ".".join(truth_format_date_list)
+
+    if users_date is None or not users_date :
+        result = "Введите дату."
+    elif "T" in users_date:
+        date_without_time = users_date.find("T")
+        only_date = users_date[:date_without_time]
+        truth_format_date_list = list(reversed(only_date.split("-")))
+        result = ".".join(truth_format_date_list)
+    else:
+        truth_format_date_list = list(reversed(users_date.split("-")))
+        result = ".".join(truth_format_date_list)
     return result

@@ -23,11 +23,13 @@ def test_mask_account_card(get_name_account_card: Union [str,int], hidden_name_a
     assert mask_account_card(get_name_account_card) == hidden_name_account_card
 
 
-
-def test_get_date():
-    assert get_date("2019-07-03T18:35:29.512364") == '03.07.2019'
-    assert get_date("2009T18:35:29.512364") == '2009'
-    assert get_date("") == ''
-
+@pytest.mark.parametrize("wrone_write_date, true_write_date",[
+    ("2023-03-11T02:26:18.671407", "11.03.2023"),
+    ("", "Введите дату."),
+    ([], "Введите дату."),
+    ("2023-03-11", "11.03.2023"),
+])
+def test_get_date(wrone_write_date: str, true_write_date: str) -> None:
+    assert get_date(wrone_write_date) == true_write_date
 
 
