@@ -9,7 +9,7 @@ def get_mask_card_number(number_card: Union[int, str]) -> str:
     elif 16 <= len(str_number_card) <= 20:
         if " " in str_number_card:
             str_number_card = str_number_card.replace(" ", "")
-            if str_number_card.isdigit and len(str_number_card) == 16:
+            if str_number_card.isdigit() and len(str_number_card) == 16:
                 result_number_card = f"{str_number_card[0:4]} {str_number_card[4:6]}** **** {str_number_card[-4:]}"
         elif str_number_card.isdigit() and len(str_number_card) == 16:
             result_number_card = f"{str_number_card[0:4]} {str_number_card[4:6]}** **** {str_number_card[-4:]}"
@@ -24,7 +24,7 @@ def get_mask_account(numbers_accounts: Union[str, int]) -> Union[str]:
     """Функция приема номера счета и шифрует его"""
 
     str_numbers_accounts = str(numbers_accounts)
-    if numbers_accounts is None or not numbers_accounts:  # Если в номер счета передается пустой список или ничего не передается
+    if numbers_accounts is None or not numbers_accounts:  # Если номер счета пустой список или ничего не передается
         result_number_accounts = "0"  # переопределил его как "0"
     elif str_numbers_accounts.isdigit():
         result_number_accounts = f"**{str_numbers_accounts[-4:]}"
