@@ -1,7 +1,6 @@
 from src.generators import transaction_descriptions, filter_by_currency, card_number_generator
 from tests.conftest import filter_by_currency_fixture_one, filter_by_currency_fixture_two
 import pytest
-from typing import Any
 
 
 def test_filter_by_currency_fixture(filter_by_currency_verification: list) -> None:
