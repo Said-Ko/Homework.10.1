@@ -3,7 +3,7 @@ from tests.conftest import filter_by_currency_fixture_one, filter_by_currency_fi
 import pytest
 
 
-def test_filter_by_currency_fixture(filter_by_currency_verification: list) -> None:
+def test_filter_by_currency_fixture(filter_by_currency_verification):
     assert next(filter_by_currency(filter_by_currency_verification, "USD")) == filter_by_currency_fixture_one
     assert next(filter_by_currency(filter_by_currency_verification, "RUB")) == filter_by_currency_fixture_two
 

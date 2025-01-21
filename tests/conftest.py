@@ -1,7 +1,5 @@
 import pytest
 
-# from src.generators import transaction_descriptions
-
 transactions = (
     [
         {
@@ -83,7 +81,7 @@ transactions = (
 
 
 @pytest.fixture
-def filter_by_currency_verification() -> list:  # Возвращает словарь со списками
+def filter_by_currency_verification():  # Возвращает словарь со списками
     return [
         {
             "id": 939719570,
