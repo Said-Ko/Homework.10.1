@@ -1,4 +1,5 @@
 import pytest
+
 # from src.generators import transaction_descriptions
 
 transactions = (
@@ -80,6 +81,7 @@ transactions = (
         }
     ])
 
+
 @pytest.fixture
 def filter_by_currency_verification() -> list:  # Возвращает словарь со списками
     return [
@@ -130,6 +132,7 @@ def filter_by_currency_verification() -> list:  # Возвращает слов�
         },
     ]
 
+
 filter_by_currency_fixture_one = [
     {
         "id": 939719570,
@@ -160,7 +163,7 @@ filter_by_currency_fixture_one = [
     },
 ]
 
-filter_by_currency_fixture_two= [
+filter_by_currency_fixture_two = [
     {
         "id": 873106923,
         "state": "EXECUTED",
@@ -180,5 +183,3 @@ filter_by_currency_fixture_two= [
         "to": "Счет 14211924144426031657",
     },
 ]
-
-
