@@ -7,7 +7,7 @@ def filter_by_currency(transactions: List, currency: str = "USD") -> Generator:
     на выходе возвращает итератор, где валюта соответсветствует заданной"""
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
-            yield transaction
+            return transaction
 
 
 def transaction_descriptions(start=1):
