@@ -4,8 +4,8 @@ import pytest
 
 
 def test_filter_by_currency_fixture(filter_by_currency_verification):
-    assert next(filter_by_currency(filter_by_currency_verification, "USD")) == filter_by_currency_fixture_one
-    assert next(filter_by_currency(filter_by_currency_verification, "RUB")) == filter_by_currency_fixture_two
+    assert list((filter_by_currency(filter_by_currency_verification, "USD"))) == filter_by_currency_fixture_one
+    assert list((filter_by_currency(filter_by_currency_verification, "RUB"))) == filter_by_currency_fixture_two
 
 
 def test_transaction_descriptions():
