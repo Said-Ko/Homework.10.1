@@ -2,12 +2,12 @@ from typing import List, Generator, Dict
 from tests.conftest import transactions
 
 
-def filter_by_currency(transactions: List[Dict], currency: str = "USD") -> None:
+def filter_by_currency(transactions: List[Dict], currency: str = "USD") -> List[Dict]:
     """ Функция принимает на вход список словарей представляющая транзакции,
     на выходе возвращает итератор, где валюта соответсветствует заданной"""
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
-            yield transaction
+            return transaction
 
 
 def transaction_descriptions(start=1):
