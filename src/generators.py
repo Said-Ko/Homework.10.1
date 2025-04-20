@@ -1,21 +1,19 @@
-from typing import List, Generator
+from typing import List, Generator, Dict
 from tests.conftest import transactions
 
 
-def filter_by_currency(transactions: List, currency: str = "USD") -> Generator:
+def filter_by_currency(transactions: List[Dict], currency: str = "USD") -> List[Dict]:
     """ Функция принимает на вход список словарей представляющая транзакции,
     на выходе возвращает итератор, где валюта соответсветствует заданной"""
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
-            yield transaction
+            return transaction
 
 
-def transaction_descriptions(start=1):
+def transaction_descriptions():
     """ Генератор принимает список словарей с транзакциями и возвращает описание каждой операции по очереди"""
-    while start < len(transactions):
-        for transaction in transactions:
-            yield transaction["description"]
-            start += 1
+    for transaction in transactions:
+        yield transaction["description"]
 
 
 def card_number_generator(begin_numb: int, last_numb: int) -> Generator:
