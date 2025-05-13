@@ -5,7 +5,7 @@ def get_mask_card_number(number_card: Union[int, str]) -> str:
     """Функция принимает на вход номер карты и шифрует его"""
     str_number_card = str(number_card)
     if number_card is None or not number_card:  # Если в номер карты передается пустой список или ничего не передается
-        result_number_card = "0"  # переопределил его как "0"
+        result_number_card = "0"  # переопределил его как "0
     elif 16 <= len(str_number_card) <= 20:
         if " " in str_number_card:
             str_number_card = str_number_card.replace(" ", "")
