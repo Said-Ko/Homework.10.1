@@ -10,12 +10,10 @@ def filter_by_currency(transactions: List[Dict], currency: str = "USD") -> List[
             return transaction
 
 
-def transaction_descriptions(start=1):
+def transaction_descriptions():
     """ Генератор принимает список словарей с транзакциями и возвращает описание каждой операции по очереди"""
-    while start < len(transactions):
-        for transaction in transactions:
-            yield transaction["description"]
-            start += 1
+    for transaction in transactions:
+        yield transaction["description"]
 
 
 def card_number_generator(begin_numb: int, last_numb: int) -> Generator:
