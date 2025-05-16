@@ -1,6 +1,8 @@
 import json
 import os
-from src.external_api import conversion_transactions
+# from src.external_api import conversion_transactions
+from src import external_api
+
 
 # Получаю абсолютный путь к корневой директории проекта
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,4 +35,4 @@ def get_transaction(transaction: dict, result: str = "RUB") -> float:
     if currency == result:
         return amount
     else:
-        return conversion_transactions(transaction)
+        return external_api.conversion_transactions(transaction)

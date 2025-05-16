@@ -46,7 +46,7 @@ def test_get_transaction_not_rub():
     not_rub_transaction = {"operationAmount": {"amount": "100.00", "currency": {"code": "USD"}}}
     with patch('src.external_api.conversion_transactions') as mock_convert:
         mock_convert.return_value = 9000.00
-        # print("Mocked function:", mock_convert)
+        print("Mocked function:", mock_convert)
         result = get_transaction(not_rub_transaction)
         # print("Actual result:", result)
         assert result == 9000.00
