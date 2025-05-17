@@ -8,6 +8,8 @@ packages = [{include = "homework_9"}]
 
 [tool.poetry.dependencies]
 python = "^3.13"
+python-dotenv = "^1.1.0"
+requests = "^2.32.3"
 
 [tool.isort]
 line_length = 119
@@ -28,6 +30,7 @@ black = "^24.10.0"
 [tool.poetry.group.dev.dependencies]
 pytest-cov = "^6.0.0"
 pytest = "^8.3.4"
+mypy = "^1.15.0"
 
 [build-system]
 requires = ["poetry-core"]
