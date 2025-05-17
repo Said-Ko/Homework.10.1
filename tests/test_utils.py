@@ -25,6 +25,7 @@ def test_check_transactions_json_file_empty() -> None:
     assert result == []
     mocked_open.assert_called_once_with(PATH_TO_FILE, encoding='utf-8')
 
+
 # тесты get_transaction
 def test_get_transaction_rub():
     """Тест рубля"""

@@ -25,4 +25,3 @@ def test_get_mask_card_number(card_number: Union[str, int], hidden_card_number: 
 ])
 def test_get_mask_account(get_account: Union[str, int], hidden_account: Union[str]) -> None:
     assert get_mask_account(get_account) == hidden_account
-
