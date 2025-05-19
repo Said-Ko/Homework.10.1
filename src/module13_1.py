@@ -4,8 +4,8 @@ import pandas as pd
 
 script_dir = os.path.dirname(__file__)
 project_root = os.path.dirname(script_dir)  # Папка HomeWork_9.1
-transaction_csv = os.path.join(project_root, 'transaction', 'transactions.csv')
-transaction_xlsx = os.path.join(project_root, 'transaction', 'transactions_excel.xlsx')
+PATH_TO_FILE_CSV = os.path.join(project_root, 'transaction', 'transactions.csv')
+PATH_TO_FILE_XLSX = os.path.join(project_root, 'transaction', 'transactions_excel.xlsx')
 
 
 # # обработка данных CSV формата
@@ -22,7 +22,7 @@ def read_csv_transactions(file_csv: list[dict]) -> list[dict]:
         return (f"Файл не найден: {file_csv}")
 
 
-# print(read_csv_transactions(transaction_csv))
+# print(read_csv_transactions(PATH_TO_FILE_CSV))
 
 
 # обработка данных .xlsx формата
@@ -35,4 +35,4 @@ def read_xlsx_transactions(file_xlsx):
     except Exception:
         return (f'Файл не найден: {file_xlsx}')
 
-# print(read_xlsx_transactions(transaction_xlsx))
+# print(read_xlsx_transactions(PATH_TO_FILE_XLSX))
